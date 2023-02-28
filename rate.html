@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="uk" translate="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Платформа управління процесами та продуктами Банку</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css" />
+</head>
+
+
+<body>
+
+
+    <!--Шапка-->
+    <header class="page-header">
+        <div class="container-header">
+            <div>
+                <a href="./index.html" class="title-page">
+                    <span>
+                        <svg class="button-icon" width="32px" height="32px">
+                            <use href="./images/icons.svg#folder-open"></use>
+                        </svg>
+                    </span>
+                    Тарифи
+                </a>
+            </div>
+
+
+            <div class="search">
+                <div class="block-svg">
+                    <input class="search-input" type="text" name="search-query" placeholder="Пошук тарифу">
+                    <!-- <svg class="search-icon" width="32px" height="32px">
+              <use href="./images/icons.svg#search"></use>
+            </svg> -->
+                </div>
+            </div>
+
+            <div class="add-rate">
+                <a href="./rate.html" class="add-rate-link">
+                    <!-- <span> -->
+                    <svg class="button-icon" width="32px" height="32px">
+                        <use href="./images/icons.svg#add-circle"></use>
+                    </svg>
+                    <!-- </span> -->
+                    Додати тариф
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Создание тарифа -->
+<div class="main-section">
+        <section class="section-add">
+            <H1 class="title">Новий тариф за продуктом</H1>
+            <form>
+                <div class="box">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Alias тарифу</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name" disabled
+                                placeholder="Alias тарифу буде сформовано автоматично"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Ідентифікатор тарифу</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name" disabled
+                                placeholder="Ідентифікатор тарифу буде сформовано автоматично"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Статус тарифа</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Діючий</option>
+                                <option>Закритий</option>
+                                <option>Не активний</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Бізнес / Напрямок</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name" disabled
+                                placeholder="Формується автоматично"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Відповідальний за тариф</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Співробітник бізнеса, який здійснює оперативне управління тарифом"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Відповідальний від ІТ</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Керівника IT-департаменту, відповідального за актуалізацію тарифів у ІТ-системі"></textarea>
+                        </div>
+                    </div> -->
+
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Інформаційна система</label>
+                        <div class="box-textarea-last">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Інформаційна система, в котрій реалізовано тариф (система з ПК Геном)"></textarea>
+                        </div>
+                    </div>
+                </div>
+            
+
+
+                <div class="box">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Назва основного продукту</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Найменування основного продукту, за яким затверджується/актуалізується тариф"></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Назва вторинного продукту</label>
+                        <div class="box-textarea">
+                            <a href="" class="prodact-link"> + Додати вторинний продукт </a>
+                            <!-- <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="+ Додати вторинний продукт"></textarea> -->
+                        </div>
+                    </div>
+
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Назва послуги</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Найменування пслуги, за якою затверджується/актуалізується тариф"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Опис тарифу</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Короткий опис тарифа"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Тип тарифа</label>
+                        <div class="box-textarea">
+                            <select class="drop-list-type" data-action="type-select">
+                                <option value="0">Оберіть з переліку</option>
+                                <option value="1">Стандартний</option>
+                                <option value="3">Акційний</option>
+                                <option value="4">Індивідуальний</option>
+                                <option value="5">Стандартний сходи</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Сегмент / Вид діяльності Клієнта</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Сегмент / Вид діяльності Клієнта"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тарифний план / пакет</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Тарифний план / пакет"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-field">
+                        <label class="form-label-title" for="name">Країна переказу</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Країна переказу готівкових коштів (заповнюється на основі сервісу визначення країни для термінових грошових переказів)"></textarea>
+                        </div>
+                    </div> -->
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Категорія клієнта</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Фіз особа</option>
+                                <option>Юр особа</option>
+                                <option>ФОП</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Платник комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Банк</option>
+                                <option>Власник карти/рахунку/скриньки</option>
+                                <option>Мерчант</option>
+                                <option>Одержувач</option>
+                                <option>Платник (будь-який клієнт)</option>
+                                <option>Платник - клієнт банка</option>
+                                <option>Платник - неідентифікований клієнт</option>
+                                <option>Пенсіонер</option>
+                                <option>Резидент</option>
+                                <option>Нерезидент</option>
+                                <option>Страхова компанія</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Рахунок банку одержувача платежу</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Рахунок у ПриватБанку</option>
+                                <option>Рахунок у сторонньому банку</option>
+                                <option>Рахунок у будь-якому банку</option>
+                                <option>Казначейство</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>База нарахування комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>За транзакцію/платіж</option>
+                                <option>За платіж інвойс</option>
+                                <option>За заїзд</option>
+                                <option>За добу</option>
+                                <option>За місяць</option>
+                                <option>За рахунок/карту/довідку/запит</option>
+                                <option>Сума платежу по інвойс</option>
+                                <option>Комісія</option>
+                                <option>Сума платежу</option>
+                                <option>Сума переказу</option>
+                                <option>Сума залишку на рахунку/картці</option>
+                                <option>На підставі актів наданих послуг</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Тип комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Відсоток від суми</option>
+                                <option>Фіксоване значення</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Строк списання</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Онлайн / під час проведення операції</option>
+                                <option>Щодня</option>
+                                <option>Щомісяця</option>
+                                <option>Одноразово при оформленні угоди / відкритті рахунку</option>
+                                <option>При закритті банківського дня</option>
+                                <option>Одноразово при закритті місяця</option>
+                                <option>При закритті угоди / рахунку</option>
+                                <option>Раз на рік</option>
+                                <option>При закритті місяця</option>
+                                <option>Протягом 3-х днів з моменту отримання рахунку</option>
+                                <option>На наступний день після прийняття рахунку на облік в контролюючому органі</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Валюта операції</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Валюта комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>USD екв</option>
+                                <option>EUR екв</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Канал проведення операції</label>
+                        <div class="box-textarea-check">
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Всі канали
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Каса
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Відділення банку
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="CSS">
+                                ТСО
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="JS">
+                                АТМ/АТМ-Ресайклінг
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                POS
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="CSS">
+                                ПриватП24
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Регулярний платіж
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="CSS">
+                                LiqPay
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="JS">
+                                По телефону
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="JS">
+                                Платіж через IVR
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Сайт компанії
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="CSS">
+                                Фотокасса
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="JS">
+                                QR-код
+                            </label>
+                            <br>
+                            <!-- <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Каса (інвойс)
+                            </label>
+                            <br> -->
+                            <!-- <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Відділення банку (інвойс)
+                            </label>
+                            <br> -->
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="CSS">
+                                В 1 клик
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="JS">
+                                Агент
+                            </label>
+                            <br>
+                            <label class="checkbox-channel">
+                                <input type="checkbox" name="channel" value="HTML">
+                                Безакцептне списання/нарахування
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Дод комісія за платіж по телефону</label>
+                        <div class="box-textarea-last">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Числове значення додаткової комісії за проведення операциї по телефону"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- <div class="form-field-tariff">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Значення тарифу</label>
+                        <div class="box-textarea-last">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Числове значення тарифу, який застосовується до операції/транзакції/платежу"></textarea>
+                        </div>
+                    </div> -->
+                </div>
+
+                <div class="form-field-tariff">
+                    <div class="box box-tariff">
+                    <label class="form-label-title" for="name"><span class="note">*</span>Значення тарифу</label>
+                    <div class="box-textarea-last">
+                        <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                            placeholder="Числове значення тарифу, який застосовується до операції/транзакції/платежу"></textarea>
+                    </div>
+                    </div>
+                </div>
+
+
+                <div class="box box-min">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Мін сума комісії</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Мінімальна сума комісії, що стягується"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Валюта мін комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>USD екв</option>
+                                <option>EUR екв</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тип мин комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Відсоток від суми</option>
+                                <option>ЗФіксована значення</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">База нарахування мін комісії</label>
+                        <div class="box-textarea-last">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>За транзакцію/платіж</option>
+                                <option>За добу</option>
+                                <option>За місяць</option>
+                                <option>За рахунок/карту/довідку/запит</option>
+                                <option>Сума платежу</option>
+                                <option>Сума переказу</option>
+                                <option>Сума залишку на рахунку/картці</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box box-max">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Макс сума комісії</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Максимальна сума комісії, що стягується"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Валюта макс комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>USD екв</option>
+                                <option>EUR екв</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тип макс комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Відсоток від суми</option>
+                                <option>ЗФіксована значення</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">База нарахування макс комісії</label>
+                        <div class="box-textarea-last">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>За транзакцію/платіж</option>
+                                <option>За добу</option>
+                                <option>За місяць</option>
+                                <option>За рахунок/карту/довідку/запит</option>
+                                <option>Сума платежу</option>
+                                <option>Сума переказу</option>
+                                <option>Сума залишку на рахунку/картці</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!-- Для каталога продуктов -->
+
+                <!-- <div class="box">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тарифи</label>
+                        <div class="box-textarea-last">
+                            <a href="" class="prodact-link">Перелік тарифів по основному продукту</a>
+                        </div>
+                    </div>
+            
+                </div> -->
+
+                <!-- <div class="box">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тарифи</label>
+                            <table class="table-rate">
+                                <thead>
+                                    <tr>
+                                        <th width="10px">№</th>
+                                        <th>Назва послуги</th>
+                                        <th>Опис тарифу</th>
+                                        <th>Платник комісії</th>
+                                        <th>База нарахування комісії</th>
+                                        <th>Тип комісії</th>
+                                        <th>Валюта операції</th>
+                                        <th>Канал проведення операції</th>
+                                        <th>Значення тарифу</th>
+                                        <th>Статус тарифу</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Картки для виплат з індивідуальним дизайном</td>
+                                        <td>Комісія за поповнення Картки для виплат з індивідуальним дизайном безготівковим платежем від третіх осіб
+                                            без її
+                                            наявності</td>
+                                        <td>Власник карти/рахунку/скриньки</td>
+                                        <td>За транзакцію/платіж</td>
+                                        <td>Відсоток від суми</td>
+                                        <td>UAH</td>
+                                        <td>Каса / відділення</td>
+                                        <td>0,5</td>
+                                        <td>Діючий</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Картки для виплат з індивідуальним дизайном</td>
+                                        <td>Комісія за розрахункове обслуговування неактивного рахунку по продукту</td>
+                                        <td>Власник карти/рахунку/скриньки</td>
+                                        <td>За рахунок/карту/довідку</td>
+                                        <td>Фіксована значення</td>
+                                        <td>UAH</td>
+                                        <td>Автоматично</td>
+                                        <td>20</td>
+                                        <td>Діючий</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                    </div>
+                </div> -->
+
+
+
+
+
+                <div class="box box-step-1">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Сходинка</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="1"></textarea>
+                        </div>
+                        <button class="icon-close-button">
+                            <svg class="icon-close" width="18px" height="18px">
+                                <use href="./images/icons.svg#icon-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Нижня границя</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Нижня межа діапазону сходинки"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Верхня границя</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Верхня межа діапазону сходинки"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Значення тарифу</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Числове значення тарифу, який застосовується до операції/транзакції/платежу"></textarea>
+                        </div>
+                    </div>
+
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Мін сума комісії</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Мінімальна сума комісії, що стягується"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Валюта мін комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>USD екв</option>
+                                <option>EUR екв</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тип мин комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Відсоток від суми</option>
+                                <option>ЗФіксована значення</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">База нарахування мін комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>За транзакцію/платіж</option>
+                                <option>За добу</option>
+                                <option>За місяць</option>
+                                <option>За рахунок/карту/довідку/запит</option>
+                                <option>Сума платежу</option>
+                                <option>Сума переказу</option>
+                                <option>Сума залишку на рахунку/картці</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Макс сума комісії</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Максимальна сума комісії, що стягується"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Валюта макс комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>USD екв</option>
+                                <option>EUR екв</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тип макс комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Відсоток від суми</option>
+                                <option>ЗФіксована значення</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">База нарахування макс комісії</label>
+                        <div class="box-textarea-last">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>За транзакцію/платіж</option>
+                                <option>За добу</option>
+                                <option>За місяць</option>
+                                <option>За рахунок/карту/довідку/запит</option>
+                                <option>Сума платежу</option>
+                                <option>Сума переказу</option>
+                                <option>Сума залишку на рахунку/картці</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box box-step-2">
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Сходинка</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="2"></textarea>
+                        </div>
+                        <button class="icon-close-button"  data-action="close-modal" type="button">
+                            <svg class="icon-close" width="18px" height="18px">
+                                <use href="./images/icons.svg#icon-close"></use>
+                            </svg>
+                        </button>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Нижня границя</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="2" style="height: 31px" id="name"
+                                placeholder="Нижня межа діапазону сходинки"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Верхня границя</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Верхня межа діапазону сходинки"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Значення тарифу</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Числове значення тарифу, який застосовується до операції/транзакції/платежу"></textarea>
+                        </div>
+                    </div>
+                
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Мін сума комісії</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Мінімальна сума комісії, що стягується"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Валюта мін комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>USD екв</option>
+                                <option>EUR екв</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тип мин комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Відсоток від суми</option>
+                                <option>Фіксована значення</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">База нарахування мін комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>За транзакцію/платіж</option>
+                                <option>За добу</option>
+                                <option>За місяць</option>
+                                <option>За рахунок/карту/довідку/запит</option>
+                                <option>Сума платежу</option>
+                                <option>Сума переказу</option>
+                                <option>Сума залишку на рахунку/картці</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Макс сума комісії</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Максимальна сума комісії, що стягується"></textarea>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Валюта макс комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>UAH</option>
+                                <option>USD</option>
+                                <option>EUR</option>
+                                <option>USD екв</option>
+                                <option>EUR екв</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Тип макс комісії</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Відсоток від суми</option>
+                                <option>Фіксована значення</option>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">База нарахування макс комісії</label>
+                        <div class="box-textarea-last">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>За транзакцію/платіж</option>
+                                <option>За добу</option>
+                                <option>За місяць</option>
+                                <option>За рахунок/карту/довідку/запит</option>
+                                <option>Сума платежу</option>
+                                <option>Сума переказу</option>
+                                <option>Сума залишку на рахунку/картці</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="add-step">
+                    <div class="form-field">
+                        <button type="button" class="prodact-link button-add-step" data-action="open-step-2"> + Додати сходинку </button>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="form-field">
+                        <label class="form-label-title" for="calendar"><span class="note">*</span>Дата початку дії тарифу</label>
+                        <div class="box-textarea">
+                            <input class="calendar" type="date" name="calendar">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Дата закінчення дії тарифу</label>
+                        <div class="box-textarea">
+                            <input class="calendar" type="date" name="calendar">
+                        </div>
+                    </div>
+
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Документ з рішенням КО</label>
+                        <div class="box-textarea">
+                            <textarea class="form-textarea" name="name" rows="1" style="height: 31px" id="name" disabled
+                                placeholder="Додайте посилання на протокол засідання КО"></textarea>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Документ з рішенням КО</label>
+                        <div class="box-textarea">
+                            <input class="form-input" id="name" placeholder="Додайте посилання на протокол засідання КО">
+                            <svg class="modal-icon" width="32px" height="32px">
+                                <use href="./images/icons.svg#link"></use>
+                            </svg>
+                        </div>
+                    </div> -->
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name"><span class="note">*</span>Дата затвердження КО</label>
+                        <div class="box-textarea">
+                            <input class="calendar" type="date" name="calendar">
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Комісія з урахуванням ПДВ</label>
+                        <div class="box-textarea">
+                            <select class="drop-list">
+                                <option>Оберіть з переліку</option>
+                                <option>Так</option>
+                                <option>Ні</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="form-label-title" for="name">Примітка</label>
+                        <div class="box-textarea-last-note ">
+                            <textarea class="form-textarea-note" name="name" rows="1" style="height: 31px" id="name"
+                                placeholder="Примітка"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <div class="box-right">
+            <div class="box-button">
+                <button type="button" class="button">Редагувати</button>
+                <button type="button" class="button">Зберегти</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./js/filters.js" type="module"></script>
+</body>
+
+</html>
